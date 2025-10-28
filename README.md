@@ -11,7 +11,8 @@ docker-compose down
 
 # Просмотр логов
 docker-compose logs -f app
+```
 
 ## Демонстрация
 
-[Демонстрация](demo.gif)
+![Демонстрация](demo.gif)
