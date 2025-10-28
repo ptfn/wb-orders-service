@@ -38,7 +38,7 @@ services:
     networks:
       - wb-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8222/"]
+      test: ["CMD", "nc", "-z", "localhost", "8222"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -65,8 +65,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-      nats-streaming:
-        condition: service_healthy
+          #nats-streaming:
+      #condition: service_healthy
     networks:
       - wb-network
     restart: unless-stopped

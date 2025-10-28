@@ -11,3 +11,7 @@ docker-compose down
 
 # Просмотр логов
 docker-compose logs -f app
+
+## Демонстрация
+
+[Скачать демонстрационное видео](demo.mkv)

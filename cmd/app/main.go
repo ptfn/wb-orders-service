@@ -32,6 +32,13 @@ func main() {
 
 	// Создаем сервис (автоматически восстанавливает кэш из БД)
 	orderService := service.NewOrderService(repo)
+
+	// Инициализируем БД (создаем таблицы если нужно)
+	if err := repo.InitDB(); err != nil {
+    	log.Printf("Warning: failed to initialize database tables: %v", err)
+	} else {
+    	log.Println("Database tables initialized successfully")
+	}
 	
 	log.Printf("Service started with %d orders in cache", orderService.GetCacheSize())
 
